@@ -1,5 +1,7 @@
 'use strict';
 
+const { it } = require("eslint/lib/rule-tester/rule-tester");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -130,11 +132,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
-  forEach.availableItems();
-  if(availableItems){
-    
-
-  }
+  let groceryList = [];
+  availableItems.forEach((item) => {
+    if(item.available) {
+      groceryList.push(item.name);
+    }
+  });
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
