@@ -134,6 +134,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
+  recipe.ingredients.forEach(element =>{
+    let deleteFirst = element.slice(element.indexOf(' ') +1);
+    let deleteSecond = deleteFirst.slice(deleteFirst.indexOf(' ')+ 1);
+    result.push(deleteSecond);
+  });
   // Solution code here...
   return result;
 };
