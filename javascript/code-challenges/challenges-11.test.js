@@ -84,7 +84,6 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
   let newArray = [];
   input.forEach(index => {
     let test = index.reduce((newVal, currentVal) => {
@@ -162,6 +161,15 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  return data.reduce((nameString, character, index) => {
+    if(index < data.length - 1 && (character.gender === 'male' || character.gender === 'female')){
+      return nameString + character.name + ' and ';
+    } else if (character.gender === 'male' || character.gender === 'female'){
+      return nameString + character.name;
+    } else {
+      return nameString;
+    }
+  },'');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -172,6 +180,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  return data.reduce((shortest, char) => parseInt(shortest.height)<char.height ? shortest : char).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
