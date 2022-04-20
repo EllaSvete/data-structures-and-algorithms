@@ -20,6 +20,8 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
--[Code Challenge 1](python/docs/array-reverse/img/array-reverse-whiteboard.png)
+- [Code Challenge 1](python/docs/array-reverse/img/array-reverse-whiteboard.png)
 
 - [Code Challenge 2](python/docs/array-insert-shift/README.md)
+
+- [Code Challenge 3](python/docs/array-binary-search/README.md)
