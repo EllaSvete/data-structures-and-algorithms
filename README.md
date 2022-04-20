@@ -22,3 +22,4 @@ To run your tests
 
 -[Code Challenge 1](python/docs/array-reverse/img/array-reverse-whiteboard.png)
 
+- [Code Challenge 2](python/docs/array-insert-shift/README.md)
