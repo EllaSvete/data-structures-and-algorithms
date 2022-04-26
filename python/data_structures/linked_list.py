@@ -1,3 +1,6 @@
+from email import header
+
+
 class LinkedList:
     # initializes class
     """
@@ -24,6 +27,8 @@ class LinkedList:
     def insert(self, value):
         # creating a new node with correct value which is the head
         self.head = Node(value, self.head)
+        # we are saving address of next thing in the linked list
+        #
 
     def includes(self, value):
         # setting the current node to the head
@@ -37,6 +42,65 @@ class LinkedList:
 
         return False
 
+    def append(self, new_value):
+        """
+        set your your new node as an attribute to the new value of the Node class.
+        self.head is the current node we are on
+        the value of the head will be set to the value of the new node
+        while that value is none, the value will become the value of the next node which is now the value of the end node.
+        """
+        end_node = Node(new_value)
+        if self.head is None:
+            self.head = end_node
+            return
+        else:
+            held_value = self.head
+            while held_value.next is not None:
+                held_value = held_value.next
+            held_value.next = end_node
+
+    def insert_before(self, value, new_value):
+        """
+        make a new node
+        iterate through the list looking for the element previous to it
+        we can re-assign next to
+
+        """
+        new_node = Node(new_value)
+        # fine the node we want to insert before
+        # save value from previous node and check next value if next node is not before value, reassign temp
+        # repeat
+        # if next value is not before then don't reassign temp
+        current = self.head
+        if self.head is None:
+            raise TargetError
+        if self.includes(value) is False:
+            raise TargetError
+        if current.value is value:
+            new_node.next = self.head
+            self.head = new_node
+        while current.next is not None:
+            if current.next.value is value:
+                new_node.next = current.next
+                current.next = new_node
+                return
+            else:
+                current = current.next
+
+    def insert_after(self, value, new_value):
+        if self.head is None:
+            raise TargetError
+        if self.includes(value) is False:
+            raise TargetError
+        new_node = Node(new_value)
+        current = self.head
+        while current:
+            if current.value is value:
+                new_node.next = current.next
+                current.next = new_node
+                break
+
+
 class Node:
         # initializing Node class with parameters of self, vale, and next as a variable set to None
     def __init__(self, value, next=None):
@@ -46,5 +110,5 @@ class Node:
         self.next = next
 
 
-class TargetError:
+class TargetError(Exception):
     pass
