@@ -25,3 +25,5 @@ To run your tests
 - [Code Challenge 2](python/docs/array-insert-shift/README.md)
 
 - [Code Challenge 3](python/docs/array-binary-search/README.md)
+
+- [Code Challenge 6](python/docs/linked_list_insertions/challenge-06.png)
