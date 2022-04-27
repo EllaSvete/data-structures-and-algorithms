@@ -64,13 +64,12 @@ class LinkedList:
         make a new node
         iterate through the list looking for the element previous to it
         we can re-assign next to
-
         """
-        new_node = Node(new_value)
-        # fine the node we want to insert before
+        # find the node we want to insert before
         # save value from previous node and check next value if next node is not before value, reassign temp
         # repeat
         # if next value is not before then don't reassign temp
+        new_node = Node(new_value)
         current = self.head
         if self.head is None:
             raise TargetError
@@ -99,6 +98,30 @@ class LinkedList:
                 new_node.next = current.next
                 current.next = new_node
                 break
+
+    def length_of_linked_list(self):
+        n = 0
+        current = self.head
+
+        while current:
+            current = current.next
+            n += 1
+        return n
+
+    def kth_from_end(self, k):
+        if k >= 0:
+            current = self.head
+            length = self.length_of_linked_list()
+            target = length - k
+
+            if target < 1:
+                raise TargetError
+            for i in range(1, target):
+                current = current.next
+            return current.value
+        else:
+            raise TargetError
+
 
 
 class Node:
