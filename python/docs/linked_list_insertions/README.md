@@ -8,5 +8,3 @@
 ## Approach & Efficiency
 
 - I talked out the code to myself and my peers slowing working through the logic. The Big O is Big O(n).
-
-
