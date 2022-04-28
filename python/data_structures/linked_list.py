@@ -123,7 +123,6 @@ class LinkedList:
             raise TargetError
 
 
-
 class Node:
         # initializing Node class with parameters of self, vale, and next as a variable set to None
     def __init__(self, value, next=None):
