@@ -29,3 +29,5 @@ To run your tests
 - [Code Challenge 6](python/docs/linked_list_insertions/challenge-06.png)
 
 - [Code Challenge 7](python/docs/linked_list_kth/whiteboard-7.png)
+
+- [Code Challenge 8](python/docs/linked_list_zip/whiteboard-8.png)
