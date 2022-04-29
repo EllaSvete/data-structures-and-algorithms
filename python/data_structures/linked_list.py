@@ -85,17 +85,19 @@ class LinkedList:
                 current = current.next
 
     def insert_after(self, value, new_value):
+        current = self.head
         if self.head is None:
             raise TargetError
         if self.includes(value) is False:
             raise TargetError
-        new_node = Node(new_value)
-        current = self.head
         while current:
-            if current.value is value:
+            if current.value == value:
+                new_node = Node(new_value)
                 new_node.next = current.next
                 current.next = new_node
-                break
+                return new_node
+            else:
+                current = current.next
 
     def length_of_linked_list(self):
         n = 0
