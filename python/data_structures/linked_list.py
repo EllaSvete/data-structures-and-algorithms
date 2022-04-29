@@ -1,5 +1,3 @@
-from email import header
-
 
 class LinkedList:
     # initializes class
