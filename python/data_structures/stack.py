@@ -1,4 +1,5 @@
-from data_structures.linked_list import LinkedList
+from data_structures.linked_list import Node
+from data_structures.invalid_operation_error import InvalidOperationError
 
 class IsEmptyError(Exception):
     pass
@@ -7,13 +8,9 @@ class Stack:
     """
     Put docstring here
     """
-    class Node:
-        def __init__(self, element, next):
-            self.element = element
-            self.next = next
 
     def __init__(self):
-        self.head = None
+        self.top = None
         self.size = 0
         self.tail = None
 
@@ -22,22 +19,31 @@ class Stack:
 
     def is_empty(self):
         return self.size == 0
+        # return self.top is None
 
-    def push(self, element):
-        self.head = self.Node(element, self.head)
-        self.size += 1
+    def push(self, value):
+        self.top = Node(value, self.top)
+
 
     def pop(self):
-        if self.is_empty():
-            raise IsEmptyError("this stack is empty and cannot pop")
-        result = self.head.element
-        self.head = self.head.next
-        self.size -= 1
-        return result
+        if not self.top:
+            raise InvalidOperationError("Method not allowed on empty collection")
+        old_top = self.top
+        self.top = self.top.next
+        old_top.next = None
 
-    def top(self):
-        if self.is_empty():
-            raise IsEmptyError("retreive elements")
-        return self.head.element
+        return old_top.value
+
+
+    def peek(self):
+        if not self.top:
+            raise InvalidOperationError("Method not allowed on empty collection")
+        return self.top.value
+
+
+    # def top(self):
+    #     if self.is_empty():
+    #         raise IsEmptyError("retreive elements")
+    #     return self.head.element
 
 
