@@ -33,3 +33,5 @@ To run your tests
 - [Code Challenge 8](python/docs/linked_list_zip/whiteboard-8.png)
 
 - [Code Challenge 10](python/docs/stack_and_queue/challenge-10.png)
+
+- [Code Challenge 11](python/docs/stack_queue_pseudo/README.md)
