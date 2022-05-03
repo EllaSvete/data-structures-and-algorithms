@@ -34,4 +34,4 @@ To run your tests
 
 - [Code Challenge 10](python/docs/stack_and_queue/challenge-10.png)
 
-- [Code Challenge 11](python/docs/stack_queue_pseudo/README.md)
+- [Code Challenge 11](python/docs/stack_queue_pseudo/whiteboard-11.png)
