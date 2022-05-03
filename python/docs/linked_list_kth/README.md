@@ -4,7 +4,7 @@
 
 ## Whiteboard Process
 
-[Code Challenge  Whiteboard](python/docs/linked_list_kth/whiteboard-7.png)
+[Code Challenge  Whiteboard](whiteboard-7.png)
 
 ## Approach & Efficiency
 
