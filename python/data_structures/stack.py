@@ -18,8 +18,8 @@ class Stack:
         return self.size
 
     def is_empty(self):
-        return self.size == 0
-        # return self.top is None
+        # return self.size == 0
+        return self.top is None
 
     def push(self, value):
         self.top = Node(value, self.top)

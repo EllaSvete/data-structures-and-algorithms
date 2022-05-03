@@ -31,3 +31,5 @@ To run your tests
 - [Code Challenge 7](python/docs/linked_list_kth/whiteboard-7.png)
 
 - [Code Challenge 8](python/docs/linked_list_zip/whiteboard-8.png)
+
+- [Code Challenge 10](python/docs/stack_and_queue/challenge-10.png)
