@@ -4,7 +4,7 @@
 
 ## Whiteboard Process
 
-[Code Challenge  Whiteboard](python/docs/stack_queue_pseudo/whiteboard-11.png)
+[Code Challenge  Whiteboard](stack_queue_pseudo/whiteboard-11.png)
 
 ## Approach & Efficiency
 
