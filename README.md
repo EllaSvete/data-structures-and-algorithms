@@ -20,18 +20,18 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-- [Code Challenge 1](python/docs/array-reverse/img/array-reverse-whiteboard.png)
+- [Code Challenge 1](python/docs/array-reverse/README.md)
 
 - [Code Challenge 2](python/docs/array-insert-shift/README.md)
 
 - [Code Challenge 3](python/docs/array-binary-search/README.md)
 
-- [Code Challenge 6](python/docs/linked_list_insertions/challenge-06.png)
+- [Code Challenge 6](python/docs/linked_list_insertions/README.md)
 
-- [Code Challenge 7](python/docs/linked_list_kth/whiteboard-7.png)
+- [Code Challenge 7](python/docs/linked_list_kth/README.md)
 
-- [Code Challenge 8](python/docs/linked_list_zip/whiteboard-8.png)
+- [Code Challenge 8](python/docs/linked_list_zip/README.md)
 
-- [Code Challenge 10](python/docs/stack_and_queue/challenge-10.png)
+- [Code Challenge 10](python/docs/stack_and_queue/README.md)
 
-- [Code Challenge 11](python/docs/stack_queue_pseudo/whiteboard-11.png)
+- [Code Challenge 11](python/docs/stack_queue_pseudo/README.md)

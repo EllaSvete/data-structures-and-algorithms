@@ -3,6 +3,7 @@
 - Extend a Linked List to allow various insertion methods
 
 ## Whiteboard Process
+
 [Code Challenge 6 Whiteboard](challenge-06.png)
 
 ## Approach & Efficiency
