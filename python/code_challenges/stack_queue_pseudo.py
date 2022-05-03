@@ -1,20 +1,21 @@
-from data_structures.linked_list import Node
 from data_structures.stack import Stack
 
 
 class PseudoQueue():
     def __init__(self):
-        self.inbox = Stack()
-        self.outbox = Stack()
+        self.in_stack = Stack()
+        self.out_stack = Stack()
 
     def enqueue(self, value):
-        self.inbox.push(value)
+        # while not self.out_stack.is_empty():
+        #     self.in_stack.push(self.out_stack.pop())
+        self.in_stack.push(value)
 
 
     def dequeue(self):
-        return self.inbox.pop()
-        # if self.inbox.is_empty:
-        #     while self.inbox.size() > 0:
-        #         self.outbox.push(self.inbox.pop())
-        # return self.outbox.items.pop()
+        if self.out_stack.is_empty():
+         while not self.in_stack.is_empty():
+            item = self.in_stack.pop()
+            self.out_stack.push(item)
+        return self.out_stack.pop()
 
