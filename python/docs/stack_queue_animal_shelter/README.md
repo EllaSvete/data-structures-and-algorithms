@@ -5,7 +5,7 @@ The shelter operates using a first-in, first-out approach.
 
 ## Whiteboard Process
 
-[Code Challenge Whiteboard](whiteboard-11.png)
+[Code Challenge Whiteboard](whiteboard-12.png)
 
 ## Approach & Efficiency
 
