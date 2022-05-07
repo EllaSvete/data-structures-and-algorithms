@@ -39,3 +39,5 @@ To run your tests
 - [Code Challenge 12](python/docs/stack_queue_animal_shelter/README.md)
 
 - [Code Challenge 13](python/docs/stack_queue_brackets/README.md)
+
+- [Code Challenge 15](python/docs/trees/README.md)
