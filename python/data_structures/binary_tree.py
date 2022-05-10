@@ -1,5 +1,6 @@
 
 from multiprocessing.sharedctypes import Value
+from data_structures.queue import Queue
 
 
 class Node:
@@ -10,8 +11,54 @@ class Node:
 
 
 class BinaryTree:
-    def __init__(self):
-        self.root = None
+    def __init__(self, root=None, values=None):
+        self.root = root
+        if values:
+            for value in values:
+                self.add(value)
+
+
+    def add(self, value):
+
+        node = Node(value)
+
+        if not self.root:
+            self.root = node
+            return
+
+        current_node = self.root
+
+        while current_node:
+            if current_node.value > value:
+                if current_node.left:
+                    current_node = current_node.left
+                else:
+                    current_node.left = node
+
+                    return
+            else:
+                if current_node.right:
+                    current_node = current_node.right
+                else:
+                    current_node.right = node
+
+                    return
+
+        # breadth.enqueue(self.root)
+
+        # while not breadth.is_empty():
+        #     front = breadth.dequeue()
+        #     if not front.left:
+        #         front.left = node
+        #         return
+        # else:
+        #     breadth.enqueue(front.left)
+
+        # if not front.right:
+        #     front.right = node
+        #     return
+        # else:
+        #     breadth.enqueue(front.right)
 
 
     def pre_order(self):

@@ -10,22 +10,30 @@ class Queue:
     def __init__(self):
         self.rear = None
         self.front = None
+        self.count = 0
 
     def enqueue(self, value):
-        if self.rear:
-            self.rear.next = Node(value)
-            self.rear = self.rear.next
+        self.count += 1
+        if self.front is None:
+            self.front = Node(value)
+            self.rear = self.front
         else:
+            self.rear.next = Node(value)
             self.rear = Node(value)
-            self.front = self.rear
+
 
     def dequeue(self):
         if self.front is None:
             raise InvalidOperationError
-        old_front = self.front
-        self.front = self.front.next
-        old_front.next = None
-        return old_front.value
+        self.count -= 1
+        node_to_remove = self.front
+        if self.count == 1:
+            self.front = None
+            self.rear = None
+        else:
+            self.front = self.front.next
+        return node_to_remove.value
+
 
     def peek(self):
         if not self.front:
