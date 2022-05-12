@@ -46,3 +46,5 @@ To run your tests
 
 - [Code Challenge 17](python/docs/tree_breadth_first/README.md)
 
+- [Code Challenge 18](python/docs/tree_fizz_buzz/README.md)
+
