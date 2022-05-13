@@ -4,10 +4,14 @@ from data_structures.queue import Queue
 
 
 class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+    # def __init__(self, value):
+    #     self.value = value
+    #     self.left = None
+    #     self.right = None
+     def __init__(self, value, left=None,right=None):
+            self.value = value
+            self.left = left
+            self.right = right
 
 
 class BinaryTree:
@@ -26,39 +30,49 @@ class BinaryTree:
             self.root = node
             return
 
-        current_node = self.root
+        breadth = Queue()
 
-        while current_node:
-            if current_node.value > value:
-                if current_node.left:
-                    current_node = current_node.left
-                else:
-                    current_node.left = node
+        breadth.enqueue(self.root)
 
-                    return
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+            if not front.left:
+                front.left = node
+                return
             else:
-                if current_node.right:
-                    current_node = current_node.right
-                else:
-                    current_node.right = node
+                breadth.enqueue(front.left)
 
-                    return
+            if not front.right:
+                front.right = node
+                return
+            else:
+                breadth.enqueue(front.right)
 
-        # breadth.enqueue(self.root)
 
-        # while not breadth.is_empty():
-        #     front = breadth.dequeue()
-        #     if not front.left:
-        #         front.left = node
-        #         return
-        # else:
-        #     breadth.enqueue(front.left)
 
-        # if not front.right:
-        #     front.right = node
+        # node = Node(value)
+
+        # if not self.root:
+        #     self.root = node
         #     return
-        # else:
-        #     breadth.enqueue(front.right)
+
+        # current_node = self.root
+
+        # while current_node:
+        #     if current_node.value > value:
+        #         if current_node.left:
+        #             current_node = current_node.left
+        #         else:
+        #             current_node.left = node
+
+        #             return
+        #     else:
+        #         if current_node.right:
+        #             current_node = current_node.right
+        #         else:
+        #             current_node.right = node
+
+        #             return
 
 
     def pre_order(self):

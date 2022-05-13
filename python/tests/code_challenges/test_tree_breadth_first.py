@@ -80,5 +80,5 @@ def test_example_from_reading():
     tree.root = Node(2, level_2_left, level_2_right)
 
     expected = [2, 7, 5, 2, 6, 9, 5, 11, 4]
-    actual = BinaryTree.breadth_first(tree)
+    actual = breadth_first(tree)
     assert actual == expected
