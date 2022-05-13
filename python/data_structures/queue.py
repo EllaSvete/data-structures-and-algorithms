@@ -19,21 +19,16 @@ class Queue:
             self.rear = self.front
         else:
             self.rear.next = Node(value)
-            self.rear = Node(value)
-
+            self.rear = self.rear.next
 
     def dequeue(self):
         if self.front is None:
             raise InvalidOperationError
         self.count -= 1
-        node_to_remove = self.front
-        if self.count == 1:
-            self.front = None
-            self.rear = None
-        else:
-            self.front = self.front.next
-        return node_to_remove.value
-
+        temporary_value = self.front
+        self.front = self.front.next
+        temporary_value.next = None
+        return temporary_value.value
 
     def peek(self):
         if not self.front:
@@ -41,14 +36,8 @@ class Queue:
         else:
             return self.front.value
 
-
-
     def is_empty(self):
         if self.front is None:
             return True
         return False
 
-
-
-# Enqueue O(1)
-#
