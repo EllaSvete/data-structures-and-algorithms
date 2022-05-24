@@ -27,4 +27,5 @@
 
 - And there we have it folks! An insert method that will arrange the values of a list in ascending order.
 
-- This method uses Big(O) of (N) because the space doesn't change at all and Big(O) of (N) because the time depends on how long the list is.
+- This method uses Big(O) of (N) because the space is the numbers added to the list
+- O(n^2) because the list will increase exponentially
