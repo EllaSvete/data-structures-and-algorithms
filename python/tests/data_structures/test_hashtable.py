@@ -5,8 +5,32 @@ from data_structures.hashtable import Hashtable
 def test_exists():
     assert Hashtable
 
+def test_create():
+    ht = Hashtable()
+    actual = ht.size
+    expected = 1024
+    assert actual == expected
 
-@pytest.mark.skip("TODO")
+def test_hash():
+    """
+    hash
+    arguments: key
+    Returns: index in collection for that key
+    """
+    ht = Hashtable()
+    index = ht.hash("cat")
+    assert 0 <= index < ht.size
+
+
+def test_set_apple():
+    ht = Hashtable()
+    ht.set('fruit', 'apple')
+    fruit_index = ht.hash('fruit')
+    actual = ht.buckets[fruit_index]
+    expected = ('fruit','apple')
+    assert actual.head.value == expected
+
+# @pytest.mark.skip("TODO")
 def test_get_apple():
     hashtable = Hashtable()
     hashtable.set("apple", "Used for apple sauce")
@@ -15,20 +39,31 @@ def test_get_apple():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
-def test_internals():
-    hashtable = Hashtable(1024)
-    hashtable.set("ahmad", 30)
-    hashtable.set("silent", True)
-    hashtable.set("listen", "to me")
+# @pytest.mark.skip("TODO")
+def test_collisions():
+    ht = Hashtable()
+    ht.set("cat", "Josie")
+    ht.set("act", "A Contemporary Theater")
+    ht.set("tac", "Taco Tuesday")
+    assert ht.get("cat") == ("Josie")
+    assert ht.get("act") == ("A Contemporary Theater")
+    assert ht.get("tac") == ("Taco Tuesday")
 
-    actual = []
 
-    # NOTE: purposely breaking encapsulation to test the "internals" of Hashmap
-    for item in hashtable._buckets:
-        if item:
-            actual.append(item.display())
+def test_contains():
+    ht = Hashtable()
+    ht.set('fruit', 'apple')
+    ht.contains('fruit')
+    assert True
 
-    expected = [[["silent", True], ["listen", "to me"]], [["ahmad", 30]]]
-
+def test_update_value():
+    ht = Hashtable()
+    ht.set('cat', 'Josie')
+    ht.set('cat', 'Lucy')
+    actual = ht.get('cat')
+    expected = 'Lucy'
     assert actual == expected
+
+# def test_keys():
+#     ht = Hashtable()
+#     ht.set()

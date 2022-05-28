@@ -47,15 +47,24 @@ class LinkedList:
         the value of the head will be set to the value of the new node
         while that value is none, the value will become the value of the next node which is now the value of the end node.
         """
-        end_node = Node(new_value)
-        if self.head is None:
-            self.head = end_node
-            return
+        # end_node = Node(new_value)
+        # if self.head is None:
+        #     self.head = end_node
+        #     return
+        # else:
+        #     held_value = self.head
+        #     while held_value.next is not None:
+        #         held_value = held_value.next
+        #     held_value.next = end_node
+        new_node = Node(new_value)
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
         else:
-            held_value = self.head
-            while held_value.next is not None:
-                held_value = held_value.next
-            held_value.next = end_node
+            self.head = new_node
+        return new_node
 
     def insert_before(self, value, new_value):
         """
@@ -67,21 +76,42 @@ class LinkedList:
         # save value from previous node and check next value if next node is not before value, reassign temp
         # repeat
         # if next value is not before then don't reassign temp
-        new_node = Node(new_value)
-        current = self.head
+        # new_node = Node(new_value)
+        # current = self.head
+        # if self.head is None:
+        #     raise TargetError
+        # if self.includes(value) is False:
+        #     raise TargetError
+        # if current.value is value:
+        #     new_node.next = self.head
+        #     self.head = new_node
+        # while current.next is not None:
+        #     if current.next.value is value:
+        #         new_node.next = current.next
+        #         current.next = new_node
+        #         return
+        #     else:
+        #         current = current.next
+
+        previous = current = self.head
         if self.head is None:
             raise TargetError
         if self.includes(value) is False:
             raise TargetError
-        if current.value is value:
-            new_node.next = self.head
-            self.head = new_node
-        while current.next is not None:
-            if current.next.value is value:
-                new_node.next = current.next
-                current.next = new_node
-                return
+
+        while current:
+            if value == current.value:
+                new_node = Node(new_value)
+                if current == self.head:
+                    new_node.next = self.head
+                    self.head = new_node
+                    return new_node
+                else:
+                    previous.next = new_node
+                    new_node.next = current
+                    return new_node
             else:
+                previous = current
                 current = current.next
 
     def insert_after(self, value, new_value):
