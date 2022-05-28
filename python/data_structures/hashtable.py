@@ -35,7 +35,7 @@ class Hashtable:
 
         #TODO: handle updates
         self.buckets[hash_index].insert((key, value))
-        print(self.buckets[hash_index])
+    # insert the key value pair at the index of the bucket in hash
 
 
     def get(self, key):
@@ -59,14 +59,23 @@ class Hashtable:
 # Returns: Boolean, indicating if the key exists in the table already.
         return bool(self.get(key))
 
-#     def keys(self):
-# # returns a collection of keys
-#         key_list = set()
-#         for bucket in self.buckets:
-#             if bucket is not None:
-
-
-#         return key_list
+    def keys(self):
+# returns a collection of keys
+        key_list = set()
+# setting the key_list to be populated later
+        for bucket in self.buckets:
+            if bucket is not None:
+# checking if bucket exists
+# if it doesn't exist set the current to the head of LL
+                current = bucket.head
+                while current:
+                    pair = current.value
+                    current_key = pair[0]
+                    key_list.add(current_key)
+                    current = current.next
+# loop through the current bucket heads and check values and assign key to 0 index of the pair
+# add the current key to the key list and move onto the next current
+        return key_list
 
 
 
