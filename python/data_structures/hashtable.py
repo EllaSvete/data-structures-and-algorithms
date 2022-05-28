@@ -22,19 +22,21 @@ class Hashtable:
         return index
 
     def set(self, key, value):
-        # has the key and set the key and value pari in the table
+        # has the key and set the key and value pair in the table
         hash_index = self.hash(key)
         # get index of hashing function
 
         bucket = self.buckets[hash_index]
 
         if bucket is None:
-            bucket = LinkedList()
-            self.buckets[hash_index] = bucket
+
+            self.buckets[hash_index] = LinkedList()
         # if no linked list in bucket then make one and put into bucket
 
         #TODO: handle updates
-        bucket.append((key, value))
+        self.buckets[hash_index].insert((key, value))
+        print(self.buckets[hash_index])
+
 
     def get(self, key):
         # returns value associated with key in the table
@@ -57,13 +59,14 @@ class Hashtable:
 # Returns: Boolean, indicating if the key exists in the table already.
         return bool(self.get(key))
 
-    def keys(self):
-# returns a collection of keys
-        key_list = []
-        for key in self.buckets[0]:
-            key_list.append(key)
+#     def keys(self):
+# # returns a collection of keys
+#         key_list = set()
+#         for bucket in self.buckets:
+#             if bucket is not None:
 
-        return key_list
+
+#         return key_list
 
 
 

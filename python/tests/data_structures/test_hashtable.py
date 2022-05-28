@@ -56,7 +56,14 @@ def test_contains():
     ht.contains('fruit')
     assert True
 
-
-def test_keys():
+def test_update_value():
     ht = Hashtable()
-    ht.set
+    ht.set('cat', 'Josie')
+    ht.set('cat', 'Lucy')
+    actual = ht.get('cat')
+    expected = 'Lucy'
+    assert actual == expected
+
+# def test_keys():
+#     ht = Hashtable()
+#     ht.set()
