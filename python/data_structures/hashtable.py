@@ -12,6 +12,7 @@ class Hashtable:
         # returns index in collection for that key
 
         sum_of_chars = 0
+
         for char in key:
             sum_of_chars += ord(char)
 
@@ -57,7 +58,9 @@ class Hashtable:
     def contains(self, key):
 # Arguments: key
 # Returns: Boolean, indicating if the key exists in the table already.
-        return bool(self.get(key))
+        if not self.get(key):
+            return bool(self.get(key))
+
 
     def keys(self):
 # returns a collection of keys
