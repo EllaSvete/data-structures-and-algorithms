@@ -1,4 +1,3 @@
-# from ntpath import join
 from data_structures.hashtable import Hashtable
 
 
