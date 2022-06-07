@@ -1,3 +1,4 @@
+from data_structures.queue import Queue
 class Graph:
     """
     Put docstring here
@@ -21,7 +22,7 @@ class Graph:
 
 
     def get_nodes(self):
-        return self._adjacency_list.keys()
+        return list(self._adjacency_list.keys())
         # returning the keys of our list, grabbing the nodes
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
@@ -41,6 +42,24 @@ class Graph:
         return self._adjacency_list[vertex]
 
         # also confused about the neighbors. How is this checking what is next to something? Seems like its returning the whole list
+
+    def breadth_first(self, vertex):
+        all_vertices = []
+        breadth = Queue()
+        checked_vertices = set()
+        breadth.enqueue(vertex)
+        checked_vertices.add(vertex)
+
+        while not breadth.is_empty():
+        # while the queue isnt empty dequeue the front and append the value to the list
+            front = breadth.dequeue()
+            all_vertices.append(front.value)
+
+            for neighbor in self.get_neighbors(front):
+                if neighbor.vertex not in checked_vertices:
+                    checked_vertices.add(neighbor.vertex)
+                    breadth.enqueue(neighbor.vertex)
+        return all_vertices
 
 
 

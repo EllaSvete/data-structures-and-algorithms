@@ -6,16 +6,13 @@ def test_exists():
     assert Graph
 
 
-@pytest.mark.skip("TODO")
 def test_bfs(graph):
     nodes = graph.get_nodes()
     root = nodes[0]
     print(root.value)
     actual = graph.breadth_first(root)
-    expected = ["Pandora", "Arendelle", "Metroville", "Monstropolis", "Narnia", "Naboo"]
+    expected = ["Pandora", "Arendelle", "Metroville", "Monstropolis", "Narnia", "Naboo"] or ["Pandora", "Arendelle", "Monstropolis", "Metroville", "Narnia", "Naboo"]
     assert actual == expected
-
-    # DANGER: Metroville/Monstropolis could be switched as well as Narnia/Naboo and still be valid BFS. What to do?
 
 
 @pytest.fixture
