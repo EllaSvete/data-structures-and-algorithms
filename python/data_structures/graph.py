@@ -22,7 +22,7 @@ class Graph:
 
 
     def get_nodes(self):
-        return self._adjacency_list.keys()
+        return list(self._adjacency_list.keys())
         # returning the keys of our list, grabbing the nodes
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
@@ -51,6 +51,7 @@ class Graph:
         checked_vertices.add(vertex)
 
         while not breadth.is_empty():
+        # while the queue isnt empty dequeue the front and append the value to the list
             front = breadth.dequeue()
             all_vertices.append(front.value)
 
